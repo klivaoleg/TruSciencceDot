@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScienceDOT</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="container">
+            <span class ="logo">ScienceDOT</span>
+            <nav>
+                <ul>
+                    <li class="active"><a href="/">Главная</a></li>
+                    <li><a href="/about.html">Курсы</a></li>
+                    <li><a href="/sim.html">Научное обеспечение</a></li>
+                    <li><a href="#">База знаний</a></li>
+            
+            
+                    <li class="btn"><a href="/contacts.html">Обратная связь</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="container trand">
+            
+            <h3>Больше о симуляциях</h3>
+            
+            <div class="courses">
+                <?php
+                    require_once "lib/db.php";
+                    $sql = 'SELECT * FROM screens ORDER BY id DESC ';
+                    $query = $pdo->prepare($sql);
+                    $query->execute();
+                    $games = $query->fetchAll(PDO::FETCH_OBJ);
+                    foreach($games as $el)
+                        echo'<div class="block">
+                    <img src="/images/'.$el->image.'" alt="">
+                    <span>
+                        <img src="/images/Vector.svg" alt="">'.$el->weight.' Кб
+                    </span>
+                </div>';
+                ?> 
+            </div>
+            <h3>А как?</h3>
+            <p>Наши симуляици прямираваоваовдлао</p>
+        </div>
+       
+    </div>
+    <footer>
+    <div class="blocks container">
+        <div>
+        <span class="logo">ScienceDOT</span>
+            <p>Образовательная платформа Олега Мильковского</p>
+        </div>
+        <div>
+            <h4>О нас</h4>
+            <ul>
+                <li><a href="/about.html">Курсы</a></li>
+                <li><a href="/contacts.html">Обратная связь</a></li>
+                <li>ТАКС</li>
+                <li>8 (915) 141-30-34</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Вход</h4>
+            <p><a href="/auth.html">Авторизация</a></p>
+            <p><a href="/reg.html">Регистрация</a></p>
+        </div>
+    </div>
+    <hr>
+    <p>© Олег Мильковский 2025</p>
+</footer>
+    
+</body>
+</html>

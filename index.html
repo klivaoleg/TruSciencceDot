@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScienceDOT</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="import" href="blocks/header.html">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="container">
+            <span class ="logo">ScienceDOT</span>
+            <nav>
+                <ul>
+                    <li class="active"><a href="/">Главная</a></li>
+                    <li><a href="/about.html">Курсы</a></li>
+                    <li><a href="/sim.html">Научное обеспечение</a></li>
+                    <li><a href="#">База знаний</a></li>
+            
+            
+                    <li class="btn"><a href="/contacts.html">Обратная связь</a></li>
+                </ul>
+            </nav>
+        </header>
+       
+        <div class="hero container">    
+            <div class="hero--info">
+                <h2>Образовательная платформа Олега Мильковского</h2>
+                <h1>Делаем знания доступнее</h1>
+                <p>Показываем красоту физики, готовим к экзаменам и олимпиадам, делаем науку интереснее и понятнее. Здесь Вы можете найти онлайн курсы, бесплатные сборники задач и учебники, а также скачать наши учебные симуляторы. 
+                    Платформа ScienceDOT к вашим услугам!
+                </p>               
+                <button class="btn">Узнать больше</button>
+            </div>
+            <img src="images/Sphere.svg" alt="">
+        </div>
+        <div class="container trand">
+            <a href="/trandsim.html" class="see-all">Смотреть всё</a>
+            <h3>Наши симуляции</h3>
+            
+            <div class="courses">
+                <?php
+                    require_once "lib/db.php";
+                    $sql = 'SELECT * FROM screens ORDER BY id DESC LIMIT 2';
+                    $query = $pdo->prepare($sql);
+                    $query->execute();
+                    $games = $query->fetchAll(PDO::FETCH_OBJ);
+                    foreach($games as $el)
+                        echo'<div class="block">
+                    <img src="/images/'.$el->image.'" alt="">
+                    <span>
+                        <img src="/images/Vector.svg" alt="">'.$el->weight.' Кб
+                    </span>
+                </div>';
+                ?>
+                
+                
+            </div>
+        </div>
+        <div class="container big-text">
+            <p>
+                Кадры симуляции
+            </p>
+        </div> 
+        
+        <div class="container banner">
+            <h3> Как выглядит симуляция изнутри?</h3>
+            <p>Левая фотография - визуализация гравитации Ньютона. В основе механики игры лежат физические законы (закон обратных квадратов)
+                . Вы можете удалять тела, добавлять разные и создавать динамичные системы в режиме реального времени. Второй снимок - симулятор черной дыры: искажение светового луча, эффект замедления времени для сторонних тел при приближении к черной дыре и возможность увидеть падение в черную дыру глазами наблюдателя и падающего. 
+            </p>
+            <div class="block">
+                <div class="screen">
+                    <img src="/images/Cube Gravity 3d.png" alt="">
+                </div>
+                <div class="screen">
+                    <img src="/images/BlackHoleScreen.png" alt="">
+                </div>  
+            </div>
+        </div>
+
+        <div class="container email">
+            <h3>Хотите сообщить о баге или предложить улучшение?</h3>
+            <p>Оставьте свой email и мы свяжемся с вами, или напишите отзыв на странице <a href="/contacts.php">Обратная связь</a></p>
+            <div class="block">
+                <div>
+                    <h4>Ждем Вашего обращения</h4>
+                    <p>Мы свяжемся с вами в течение 3 рабочих дней</p>
+                </div>
+                <div>
+                    <input type="email" id="emailField" placeholder="Введите ваш email">
+                    <button onclick="checkEmail()">Продолжить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+    <div class="blocks container">
+        <div>
+        <span class="logo">ScienceDOT</span>
+            <p>Образовательная платформа Олега Мильковского</p>
+        </div>
+        <div>
+            <h4>О нас</h4>
+            <ul>
+                <li><a href="/about.html">Курсы</a></li>
+                <li><a href="/contacts.html">Обратная связь</a></li>
+                <li>ТАКС</li>
+                <li>8 (915) 141-30-34</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Вход</h4>
+            <p><a href="/auth.html">Авторизация</a></p>
+            <p><a href="/reg.html">Регистрация</a></p>
+        </div>
+    </div>
+    <hr>
+    <p>© Олег Мильковский 2025</p>
+</footer>
+    <script>
+        function checkEmail(){
+            let email = document.querySelector('#emailField').value;
+            if(!email.includes('@'))alert('Нет символа @');
+            else if(!email.includes('.'))alert('Нет символа .');
+            else alert('YICE')
+        }
+    </script>
+</body>
+</html>
