@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{ 
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 16px;
+    background: #000;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+}
+.wrapper{
+    background: linear-gradient(90deg,rgba(25, 25, 25, 1) 0%, rgba(74, 40, 0, 1) 100%);
+    width: 100%;
+}
+.container{
+    width: 1400px;
+    margin: 0 auto;
+
+}
+header{padding: 50px 0;}
+header .logo, footer .blocks .logo{
+    
+    font-size:30px;
+    font-weight: 700;
+}
+header nav{
+    float: right;
+    width: 50%;
+}
+header nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    position: relative;
+}
+header nav ul li{
+    display: inline-block;
+}
+header nav ul li a{
+    color: #fff;
+}
+header nav ul li:not(.active):not(.btn) a:hover{
+    border-bottom:  5px solid #DC7000;
+}
+header nav ul li.btn a, .email .block button{
+    background: #DC7000;
+    padding: 9px 17px;
+    border-radius: 5px;
+    transition: all 500ms ease;
+}
+header nav ul li.btn a:hover, .email .block button:hover{
+    background: #a02604;
+}
+header nav ul li.active::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 5px;
+    background: #DC7000;
+    border-radius: 5px;
+    position: relative;
+    top:10px;
+}
+.hero{
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+.hero--info{
+    width: 530px;
+    padding-top:70px ;
+}
+.hero--info h2{
+    color:#DC7000;
+    font-size: 20px;
+    font-weight: 500;
+}
+.hero--info h1{
+    font-size: 50px;
+    font-weight: 500;
+}
+.hero--info p{
+    font-weight: 500;
+    line-height: 170%;
+    margin: 10px 0;
+}
+.hero--info .btn, .hero-about .info .btn{
+    background:#a02604;
+    color: #fff;
+    border-radius: 50px;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: 0;
+    transition: all 500ms ease;
+}
+.hero--info .btn:hover, .hero-about .info .btn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.hero img{
+    position: absolute;
+    transform: scale(1.8);
+    top: 50px;
+    
+    right: 40px;
+}
+
+/*секция с курсами*/
+.trand h3{
+    font-weight: 700;
+    font-size: 31px;
+}
+.trand .see-all{
+    color: #fff;
+    background: #25211D;
+    border-radius:  5px;
+    padding: 12px 24px;
+    float: right;
+    display: block;
+    transition: all 500ms ease;
+}
+.trand .see-all:hover{
+    transform: scale(1.1);
+}
+.trand .courses{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.trand .courses span{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+.trand  p{
+    padding: 5px 0;
+    line-height: 170%;
+    margin-bottom: 30px;
+    width: 1000px;
+}
+.trand .courses span img{
+    
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+}
+.trand .courses img{
+    max-width: 200px;
+}
+.big-text{
+    padding: 50px 0;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    width: 800px;
+}
+.banner{
+    
+    padding: 80px 0;
+
+}
+.banner h3{
+    color: #DC7000;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.banner p{
+    line-height: 170%;
+    margin-bottom: 30px;
+    width: 1000px;
+
+}
+.banner .block{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+.banner .block .screen{
+    position: relative;
+    padding-left: 30px ;
+    max-width: 60%;
+    
+    transition: all 500ms ease;
+}
+.banner .block .screen:hover{
+    transform: scale(1.05);
+}
+/*down*/
+.email{
+    padding-bottom: 120px;
+}
+.email h3{
+    margin-top: 60px;
+    font-size: 30px;
+}
+.email .block{
+    background: #1C140F;
+    margin-top: 30px;
+    border-radius: 5px;
+    padding: 40px 3%;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.email .block h4{
+    font-size: 30px;
+    font-weight: 600;
+}
+.email .block p{
+    width: 500px;
+}
+.email p a{
+    color:#DC7000;
+}
+.email .block input{
+    background: #fff;
+    outline: #a02604;
+    border-radius: 10px;
+    border: 0;
+    width: 380px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    padding: 20px 30px;
+    position: relative;
+    right:-120px;
+    z-index: 1;
+    padding-right: 130px;
+    
+}
+.email .block input::placeholder{
+    color: #898989;
+}
+.email .block button{
+    cursor: pointer;
+    border: 0;
+    color: #fff;
+    padding: 13px 17px;
+    position: relative;
+    z-index: 2;
+}
+
+/*КАкая то страница про ас или про курсы*/
+.hero-about {
+    position: relative;
+}
+.hero-about img{
+    position: absolute;
+    right: -50px;
+    top: -15px;
+}
+.hero-about .info{
+    width: 500px;
+    padding: 50px 0;
+}
+.hero-about .info h1{
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+.hero-about .info .btn{
+    margin-top: 20px;
+}
+.work{
+    padding: 80px 0;
+}
+.work h2{
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+.work .blocks{
+    display: flex;
+    justify-content: space-between;
+}
+.work .blocks .block{
+    width: 25%;
+    border-radius: 10px;
+    padding: 50px 35px;
+    background: #1C140F;
+}
+.work .blocks .block h3{
+    font-size: 20px;
+    margin: 20px 0;
+}
+.work .blocks .block .badge{
+    border-radius: 7px;
+    padding: 10px 20px;
+}
+.work .blocks .block .badge.purple{
+    background: #560F67;
+}
+.work .blocks .block .badge.brown{
+    background: #31190D;
+}
+.work .blocks .block .badge.green{
+    background: #192A1D;
+}
+/*Contatststs*/
+.hero-contacts h1{
+    text-align: center;
+    margin-top: 70px ;
+    margin-bottom: 30px;
+    font-size: 30px;
+
+}
+.hero-contacts p{
+    margin-left: 5px;
+    width: 70%;
+}
+.hero-contacts .qr img{
+    background: #fff;
+    width: 200px;
+    position: absolute;
+    left: -140px;
+}
+.hero-contacts img{
+    background: #fff;
+    width: 70%;
+    margin: 70px 15%;
+}
+
+.feedback{
+    padding: 70px 0;
+    background: #1C140F;
+}
+.feedback h2{
+    text-align: center;
+    font-weight: 400;
+    font-size: 30px;
+
+}
+.feedback p{
+    text-align: center;
+    margin-top: 10px;
+}
+.feedback form{
+    margin: 80px auto;
+    width: 600px;
+
+}
+.feedback form .inline{
+    display: flex;
+    justify-content: space-between;
+}
+.feedback form .inline > div{
+    width: 50%;
+}
+.feedback form label{
+    color:#4F4F4F;
+    font-size: 15px;
+}
+.feedback form input, .feedback form textarea{
+    background: #2C2420;
+    border-radius: 10px;
+    border: 0.6px solid #CECECE;
+    display: block;
+    width: 90%;
+    padding: 15px 10px;
+    outline: none;
+    color: #fff;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+.feedback form .one-line{
+    width: 96%;
+}
+.feedback form textarea{
+    resize: none;
+    height: 200px;
+}
+.feedback form button{
+    background: #DC7000;
+    border-radius: 5px;
+    border: 0;
+    float: right;
+    cursor: pointer;
+    color:#fff;
+    padding: 15px 30px;
+    transition: all 500ms ease;
+}
+.feedback form button:hover{
+    background: #a02604;
+}
+.feedback form a{
+    margin-top: 10px;
+    background: #DC7000;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    display: block;
+    width: 90%;
+    padding: 15px 30px;
+    text-align: center;
+    outline: none;
+    color: #fff;
+    transition: all 500ms ease;
+}
+.feedback form a:hover{
+    background: #a02604;
+}
+
+
+/*Footer*/
+footer{
+    background: #000;
+    padding: 50px 0;
+
+}
+footer .blocks{
+    display: flex;
+    justify-content: space-between;
+}
+footer .blocks p{
+    width: 300px;
+    padding: 15px 0;
+
+}
+footer .blocks h4{
+    font-weight: 400;
+    font-size: 17px;
+}
+footer .blocks ul{
+    list-style: none;
+
+}
+footer .blocks ul li{
+    margin-top: 10px;
+    opacity: 0.8;
+}
+footer .blocks ul li a{
+    color:#fff;
+}
+footer .blocks p a{
+    color:#fff;
+}
+footer .blocks p {
+    color:#DC7000;
+}
+footer hr{
+    margin: 30px 0;
+    border: 0;
+    height: 0.6px;
+    background: #ccc;
+
+}
+footer > p{
+    text-align: center;
+}
+
